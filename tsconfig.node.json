@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Добавляем DOM и DOM.Iterable для совместимости с App.tsx
+    "module": "ESNext", // Используем ESNext для соответствия App.tsx
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true, // <-- ВАЖНО: Эта опция должна быть здесь для Node-файлов
+    "jsx": "react-jsx", // Убедитесь, что это тоже есть
+    
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["node"] // <-- Убедитесь, что 'node' есть в типах, если используются Node.js API
+  },
+  "include": ["vite.config.ts"] // Или другие файлы, которые запускаются в Node.js
+}

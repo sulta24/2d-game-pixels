@@ -1,0 +1,32 @@
+/* src/index.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0; /* Светло-серый фон */
+  display: flex;
+  justify-content: center; /* Центрируем содержимое по горизонтали */
+  align-items: center; /* Центрируем содержимое по вертикали */
+  min-height: 100vh; /* Минимальная высота вьюпорта */
+}
+
+#root {
+  display: flex;
+  flex-direction: column; /* Элементы в колонку */
+  align-items: center; /* Центрируем по горизонтали */
+  gap: 20px; /* Отступы между элементами */
+}
+
+.App {
+  text-align: center;
+}
+
+.game-area {
+  position: relative; /* Важно для абсолютного позиционирования пикселей */
+  border: 2px solid #333; /* Граница игрового поля */
+  background-color: #fff; /* Белый фон игрового поля */
+  overflow: hidden; /* Обрезает контент, выходящий за границы */
+}
