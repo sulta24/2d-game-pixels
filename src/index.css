@@ -6,27 +6,137 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f0f0; /* Светло-серый фон */
+  background-color: #e0f2f7; /* Мягкий голубой фон */
   display: flex;
-  justify-content: center; /* Центрируем содержимое по горизонтали */
-  align-items: center; /* Центрируем содержимое по вертикали */
-  min-height: 100vh; /* Минимальная высота вьюпорта */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
 }
 
 #root {
   display: flex;
-  flex-direction: column; /* Элементы в колонку */
-  align-items: center; /* Центрируем по горизонтали */
-  gap: 20px; /* Отступы между элементами */
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* Увеличим отступы */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Ограничим ширину контента */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .App {
   text-align: center;
+  width: 100%;
+}
+
+h1 {
+  color: #007bff; /* Яркий синий заголовок */
+  margin-bottom: 25px;
+  font-size: 2.2em;
 }
 
 .game-area {
-  position: relative; /* Важно для абсолютного позиционирования пикселей */
-  border: 2px solid #333; /* Граница игрового поля */
-  background-color: #fff; /* Белый фон игрового поля */
-  overflow: hidden; /* Обрезает контент, выходящий за границы */
+  position: relative;
+  border: 3px solid #007bff; /* Более выразительная рамка */
+  background-color: #f8fcfd; /* Очень светлый фон поля */
+  overflow: hidden;
+  border-radius: 8px; /* Скругленные углы игрового поля */
+  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Стили для формы входа */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  background-color: #f0f8ff; /* Очень светлый голубой фон формы */
+  border: 1px solid #b0e0e6;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  width: 300px;
+  max-width: 90%;
+}
+
+.login-form h2 {
+  color: #0056b3;
+  margin-top: 0;
+  font-size: 1.8em;
+}
+
+.login-form input[type="text"] {
+  padding: 12px 15px;
+  border: 1px solid #007bff;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.login-form input[type="text"]:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.login-form button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.login-form button:active {
+  transform: translateY(0);
+}
+
+/* Стили для игровой информации и кнопки выхода */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.game-info p {
+  margin: 0;
+}
+
+.game-info strong {
+  color: #007bff;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #dc3545; /* Красная кнопка выхода */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  margin-top: 15px;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.logout-button:active {
+  transform: translateY(0);
 }
