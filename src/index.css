@@ -1,29 +1,43 @@
-/* src/index.css */
+/* src/index.css - Минималистичный дизайн в приятных тонах */
+
+:root {
+  --primary-color: #6a8eab; /* Нежный синий для акцентов и рамок */
+  --secondary-color: #8bbdc7; /* Мягкий голубой для фона */
+  --text-color: #444a54; /* Темно-серый для основного текста */
+  --background-light: #f7f9fc; /* Очень светлый фон страницы */
+  --background-mid: #eef2f7; /* Немного темнее для карточек */
+  --button-hover: #5a7b97; /* Темнее для кнопок при наведении */
+  --button-danger: #e76f51; /* Мягкий красный для кнопки выхода */
+  --button-danger-hover: #d65538;
+  --border-color: #d1d9e6; /* Легкий серый для границ */
+  --shadow-light: rgba(0, 0, 0, 0.05); /* Легкая тень */
+  --shadow-medium: rgba(0, 0, 0, 0.1); /* Средняя тень */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e0f2f7; /* Мягкий голубой фон */
+  background-color: var(--background-light); /* Очень светлый фон страницы */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #333;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px; /* Увеличим отступы */
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  max-width: 900px; /* Ограничим ширину контента */
+  gap: 30px; /* Отступы между элементами */
+  padding: 30px;
+  background-color: #ffffff; /* Белый фон основной карточки */
+  border-radius: 15px; /* Более скругленные углы */
+  box-shadow: 0 10px 30px var(--shadow-medium); /* Более выраженная, но мягкая тень */
+  max-width: 960px; /* Увеличим ширину контента */
   width: 100%;
   box-sizing: border-box;
 }
@@ -34,82 +48,94 @@ body {
 }
 
 h1 {
-  color: #007bff; /* Яркий синий заголовок */
-  margin-bottom: 25px;
-  font-size: 2.2em;
+  color: var(--primary-color); /* Нежный синий для заголовка */
+  margin-bottom: 30px;
+  font-size: 2.5em; /* Немного увеличим размер */
+  letter-spacing: 1px;
 }
 
 .game-area {
   position: relative;
-  border: 3px solid #007bff; /* Более выразительная рамка */
-  background-color: #f8fcfd; /* Очень светлый фон поля */
+  border: 2px solid var(--primary-color); /* Рамка в основном цвете */
+  background-color: var(--background-mid); /* Немного более выраженный фон поля */
   overflow: hidden;
-  border-radius: 8px; /* Скругленные углы игрового поля */
-  box-shadow: inset 0 0 8px rgba(0, 123, 255, 0.2);
+  border-radius: 10px; /* Скругленные углы игрового поля */
+  box-shadow: inset 0 0 10px var(--shadow-light); /* Внутренняя мягкая тень */
+  aspect-ratio: 4 / 3; /* Соотношение сторон для гибкости */
+  max-width: 100%; /* Убедимся, что помещается */
 }
 
 /* Стили для формы входа */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 30px;
-  background-color: #f0f8ff; /* Очень светлый голубой фон формы */
-  border: 1px solid #b0e0e6;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  width: 300px;
+  gap: 20px;
+  padding: 40px;
+  background-color: #ffffff; /* Белый фон формы */
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow-light);
+  width: 320px;
   max-width: 90%;
+  box-sizing: border-box;
 }
 
 .login-form h2 {
-  color: #0056b3;
+  color: var(--primary-color);
   margin-top: 0;
-  font-size: 1.8em;
+  font-size: 2em;
+  margin-bottom: 15px;
 }
 
 .login-form input[type="text"] {
-  padding: 12px 15px;
-  border: 1px solid #007bff;
-  border-radius: 6px;
-  font-size: 1em;
+  padding: 14px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1.1em;
+  color: var(--text-color);
   outline: none;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+.login-form input[type="text"]::placeholder {
+  color: #a0a8b5; /* Более мягкий цвет плейсхолдера */
+}
+
 .login-form input[type="text"]:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(106, 142, 171, 0.2); /* Мягкое свечение */
 }
 
 .login-form button {
-  padding: 12px 25px;
-  background-color: #007bff;
+  padding: 14px 28px;
+  background-color: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 1.1em;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .login-form button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  background-color: var(--button-hover);
+  transform: translateY(-3px); /* Более выраженное поднятие */
 }
 
 .login-form button:active {
   transform: translateY(0);
+  background-color: var(--primary-color); /* Возврат к исходному цвету при клике */
 }
 
 /* Стили для игровой информации и кнопки выхода */
 .game-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   margin-top: 20px;
-  font-size: 1.1em;
-  color: #555;
+  font-size: 1.05em;
+  color: var(--text-color);
 }
 
 .game-info p {
@@ -117,26 +143,48 @@ h1 {
 }
 
 .game-info strong {
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .logout-button {
   padding: 10px 20px;
-  background-color: #dc3545; /* Красная кнопка выхода */
+  background-color: var(--button-danger); /* Мягкий красный */
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 1em;
+  font-size: 0.95em;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
   margin-top: 15px;
+  align-self: center; /* Центрируем кнопку */
 }
 
 .logout-button:hover {
-  background-color: #c82333;
+  background-color: var(--button-danger-hover);
   transform: translateY(-2px);
 }
 
 .logout-button:active {
   transform: translateY(0);
+}
+
+/* Стили для пикселей игроков */
+/* Заметьте, что основные стили пикселей теперь задаются в Player.tsx */
+/* Но можно добавить общие стили, если нужно */
+.player-pixel {
+  transition: left 0.1s linear, top 0.1s linear; /* Плавное движение */
+}
+
+.player-nickname {
+  position: absolute;
+  top: -20px; /* Расположение ника над пикселем */
+  color: var(--text-color);
+  font-size: 11px; /* Чуть меньше размер для минимализма */
+  font-weight: 600; /* Полужирный */
+  white-space: nowrap;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.7); /* Мягкая белая тень для читаемости */
+  padding: 2px 5px; /* Немного отступа */
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон для ника */
+  pointer-events: none; /* Чтобы ник не мешал событиям мыши */
 }

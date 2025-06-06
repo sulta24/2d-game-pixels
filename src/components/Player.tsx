@@ -17,35 +17,28 @@ const Player: React.FC<PlayerProps> = ({ player }) => {
         top: `${player.y}px`,
         width: `${pixelSize}px`,
         height: `${pixelSize}px`,
-        backgroundColor: player.color,
+        backgroundColor: player.color, // Основной цвет задан здесь
         borderRadius: '50%',
-        border: '1px solid #333',
+        border: '1px solid var(--text-color)', // Мягкая обводка
         boxSizing: 'border-box',
         zIndex: 1,
         transition: 'left 0.1s linear, top 0.1s linear',
-        display: 'flex', // Для центрирования текста
+        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'column', // Чтобы текст был над пикселем
-        transform: 'translateY(-50%)' // Поднять пиксель так, чтобы центр был в указанных координатах
+        flexDirection: 'column',
       }}
       title={`Player ID: ${player.id}`}
+      className="player-pixel" // Добавляем класс для общих стилей
     >
       {/* Никнейм игрока */}
       <span
-        style={{
-          position: 'absolute',
-          top: '-20px', // Расположение ника над пикселем
-          color: '#333',
-          fontSize: '12px',
-          fontWeight: 'bold',
-          whiteSpace: 'nowrap', // Предотвратить перенос ника
-          textShadow: '0 0 2px #fff, 0 0 4px #fff' // Обводка для читаемости
-        }}
+        className="player-nickname" // Используем класс для стилей ника
+        style={{ top: `${-pixelSize - 10}px` }} // Позиционируем ник над пикселем, используя pixelSize
       >
         {player.name}
       </span>
-      {/* Сам пиксель - теперь это содержимое div */}
+      {/* Сам пиксель - это теперь div внутри */}
       <div
         style={{
           width: '100%',
